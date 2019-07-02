@@ -1,4 +1,4 @@
-FROM masterandrey/docker-python-base
+FROM andgineer/python-base
 
 COPY pip.requirements.txt /pip.requirements.txt
 COPY xkcd.otf /
