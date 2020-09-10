@@ -1,4 +1,3 @@
-[![Docker Stars](https://img.shields.io/docker/stars/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)
 
 Alpine linux based [Docker Hub container](https://cloud.docker.com/repository/docker/andgineer/matplotlib) 
