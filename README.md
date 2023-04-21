@@ -1,11 +1,23 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)
 
-Alpine linux based [Docker Hub container](https://cloud.docker.com/repository/docker/andgineer/matplotlib) 
-with matplotlib, numpy and Python3.
+This [Docker container](https://cloud.docker.com/repository/docker/andgineer/matplotlib) 
+is available on Docker hub.
 
-Also I installed 'Comic Sans' font for xkcd style in matplotlib.
+It is based on Alpine Linux and includes matplotlib, numpy, and Python. 
+It also includes the 'Comic Sans' font for xkcd style in matplotlib.
 
-Matplotlib with dependencies builds about 20 minutes on Docker Hub so this repository
-saves your time.
+## Usage
 
-Example how to use it see in [Calendar for IoT](https://github.com/andgineer/docker-iot-calendar).
+You can use this container as a base for your own Docker containers that require matplotlib. 
+Simply add the following line to your Dockerfile:
+
+    FROM andgineer/matplotlib
+
+Then, copy your application files into the container and set the working directory, user, and 
+command as necessary.
+
+## Example
+
+An example Dockerfile for an IoT calendar application using this container can be found in the 
+GitHub repository [Calendar for IoT](https://github.com/andgineer/docker-iot-calendar).
+
