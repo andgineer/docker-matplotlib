@@ -1,23 +1,24 @@
-[![Docker Pulls](https://img.shields.io/docker/pulls/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)[![Docker Automated build](https://img.shields.io/docker/image-size/andgineer/matplotlib)](https://hub.docker.com/r/andgineer/matplotlib)
 
-This [Docker container](https://cloud.docker.com/repository/docker/andgineer/matplotlib) 
-is available on Docker hub.
+# Docker Container with Matplotlib, Numpy, and Python on Alpine Linux
 
-It is based on Alpine Linux and includes matplotlib, numpy, and Python. 
-It also includes the 'Comic Sans' font for xkcd style in matplotlib.
+This Docker container, available on [Docker Hub](https://cloud.docker.com/repository/docker/andgineer/matplotlib), 
+is built on Alpine Linux and comes pre-installed with Matplotlib, Numpy, and Python. 
+
+Additionally, it includes the 'Comic Sans' font to support xkcd styles in Matplotlib.
 
 ## Usage
 
-You can use this container as a base for your own Docker containers that require matplotlib. 
-Simply add the following line to your Dockerfile:
+To leverage this container as the foundational layer for your Docker applications requiring Matplotlib, 
+incorporate the subsequent line in your Dockerfile:
 
     FROM andgineer/matplotlib
 
-Then, copy your application files into the container and set the working directory, user, and 
-command as necessary.
+Subsequently, transfer your application's files into the container. 
+Adjust the working directory, user, and command as deemed appropriate.
 
 ## Example
 
-An example Dockerfile for an IoT calendar application using this container can be found in the 
-GitHub repository [Calendar for IoT](https://github.com/andgineer/docker-iot-calendar).
+For a practical Dockerfile that employs this container for an IoT calendar application, 
+refer to the [Calendar for IoT](https://github.com/andgineer/docker-iot-calendar) GitHub repository.
 
