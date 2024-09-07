@@ -1,9 +1,9 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)[![Docker Automated build](https://img.shields.io/docker/image-size/andgineer/matplotlib)](https://hub.docker.com/r/andgineer/matplotlib)
 
-# Docker Container with Matplotlib, Numpy, and Python on Alpine Linux
+# Lightweight Docker Container with Python packages Matplotlib and Numpy
 
-This Docker container, available on [Docker Hub](https://cloud.docker.com/repository/docker/andgineer/matplotlib), 
-is built on Alpine Linux and comes pre-installed with Matplotlib, Numpy, and Python. 
+Alpine Linux based [Docker container](https://cloud.docker.com/repository/docker/andgineer/matplotlib), 
+with pre-installed with Python packages Matplotlib, Numpy.
 
 Additionally, it includes the 'Comic Sans' font to support xkcd styles in Matplotlib.
 
