@@ -29,13 +29,18 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
+      - name: Get Matplotlib version
+        run: |
+          MATPLOTLIB_VERSION=$(grep 'matplotlib==' requirements.txt | cut -d'=' -f3)
+          echo "MATPLOTLIB_VERSION=${MATPLOTLIB_VERSION}" >> $GITHUB_ENV
+
       - name: Build and push to docker hub
         uses: docker/build-push-action@v5
         with:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:${{ env.MATPLOTLIB_VERSION }}, ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:latest
           cache-from: type=registry,ref=user/app:latest
           cache-to: type=inline
           platforms: |-
