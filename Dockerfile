@@ -5,7 +5,6 @@ USER root
 COPY xkcd.otf /usr/share/fonts/
 
 RUN ln -s /usr/include/locale.h /usr/include/xlocale.h \
-    && fc-cache -f -v \
     && apk --no-cache add musl-dev linux-headers gfortran g++ jpeg-dev zlib-dev cairo-dev
 
 USER leanpython
