@@ -29,23 +29,45 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
+      - name: Build locally to get version info
+        id: build_info
+        uses: docker/build-push-action@v5
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: false
+          load: true
+          tags: temp-image:latest
+          cache-to: type=local,dest=/tmp/.buildx-cache
+
+      - name: Get versions
+        id: get_version
+        run: |
+          # Get Python version
+          PYTHON_VERSION=$(docker run --rm temp-image -c "import sys; print(sys.version.split()[0])")
+
+          # Extract two-digit versions
+          PYTHON_VERSION_SHORT=$(echo $PYTHON_VERSION | sed -E 's/([0-9]+\.[0-9]+)\.[0-9]+/\1/')
+
       - name: Get Matplotlib version
         run: |
           MATPLOTLIB_VERSION=$(grep 'matplotlib==' requirements.txt | cut -d'=' -f3)
           echo "MATPLOTLIB_VERSION=${MATPLOTLIB_VERSION}" >> $GITHUB_ENV
 
-      - name: Build and push to docker hub
+      - name: Build and push
         uses: docker/build-push-action@v5
         with:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:${{ env.MATPLOTLIB_VERSION }}, ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:latest
-          cache-from: type=registry,ref=user/app:latest
-          cache-to: type=inline
+          tags: |
+            ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:latest
+            ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:${{ env.MATPLOTLIB_VERSION }}
+            ${{ secrets.DOCKER_HUB_USERNAME }}/matplotlib:${{ env.MATPLOTLIB_VERSION }}-${{ steps.get_version.outputs.python_version_short }}
           platforms: |-
             linux/amd64
             linux/arm64
+          cache-from: type=local,src=/tmp/.buildx-cache
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

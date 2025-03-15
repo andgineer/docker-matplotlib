@@ -22,3 +22,8 @@ Adjust the working directory, user, and command as deemed appropriate.
 For a practical Dockerfile that employs this container for an IoT calendar application, 
 refer to the [Calendar for IoT](https://github.com/andgineer/docker-iot-calendar) GitHub repository.
 
+### Tags
+
+* `latest` - latest Matplotlib with the default Python version
+* `X.Y.Z` - Matplotlib X.Y.Z (like 3.10.0) with the default Python version
+* `X.Y.Z-A.B` - Matplotlib X.Y.Z with Python A.B (like 3.10.0-3.12) 
