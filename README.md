@@ -7,15 +7,15 @@ with pre-installed with Python packages Matplotlib, Numpy.
 
 Additionally, it includes the 'Comic Sans' font to support xkcd styles in Matplotlib.
 
-## Usage
+## Using this image as a base
 
-To leverage this container as the foundational layer for your Docker applications requiring Matplotlib, 
-incorporate the subsequent line in your Dockerfile:
+To use this container as a foundation for your Docker applications 
+that require Matplotlib, add the following line to your Dockerfile:
 
     FROM andgineer/matplotlib
 
-Subsequently, transfer your application's files into the container. 
-Adjust the working directory, user, and command as deemed appropriate.
+More information on how to use this image as a base can be found in the 
+[Lean Python](https://github.com/andgineer/docker-lean-python?tab=readme-ov-file#using-this-image-as-a-base)
 
 ## Example
 
