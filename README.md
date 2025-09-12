@@ -1,11 +1,11 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/andgineer/matplotlib.svg)](https://hub.docker.com/r/andgineer/matplotlib/)[![Docker Automated build](https://img.shields.io/docker/image-size/andgineer/matplotlib)](https://hub.docker.com/r/andgineer/matplotlib)
 
-# Lightweight Docker Container with Python packages Matplotlib and Numpy
+# Lightweight Docker Container with Python Packages Matplotlib and NumPy
 
-Alpine Linux based [Docker container](https://cloud.docker.com/repository/docker/andgineer/matplotlib), 
-with pre-installed with Python packages Matplotlib, Numpy.
+Alpine Linux-based [Docker container](https://cloud.docker.com/repository/docker/andgineer/matplotlib) 
+with pre-installed Python packages Matplotlib and NumPy.
 
-Additionally, it includes the 'Comic Sans' font to support xkcd styles in Matplotlib.
+Additionally, it includes the 'Comic Sans' font to support XKCD-style plots in Matplotlib.
 
 ## Using this image as a base
 
@@ -15,7 +15,7 @@ that require Matplotlib, add the following line to your Dockerfile:
     FROM andgineer/matplotlib
 
 More information on how to use this image as a base can be found in the 
-[Lean Python](https://github.com/andgineer/docker-lean-python?tab=readme-ov-file#using-this-image-as-a-base)
+[Lean Python](https://github.com/andgineer/docker-lean-python?tab=readme-ov-file#using-this-image-as-a-base) documentation.
 
 ## Example
 
@@ -25,5 +25,5 @@ refer to the [Calendar for IoT](https://github.com/andgineer/docker-iot-calendar
 ### Tags
 
 * `latest` - latest Matplotlib with the default Python version
-* `X.Y.Z` - Matplotlib X.Y.Z (like 3.10.0) with the default Python version
-* `X.Y.Z-A.B` - Matplotlib X.Y.Z with Python A.B (like 3.10.0-3.12) 
+* `X.Y.Z` - Matplotlib X.Y.Z (e.g., 3.10.0) with the default Python version
+* `X.Y.Z-A.B` - Matplotlib X.Y.Z with Python A.B (e.g., 3.10.0-3.12) 
