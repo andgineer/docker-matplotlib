@@ -6,7 +6,7 @@ unset CONDA_PREFIX  # if conda is installed, it will mess with the virtual env
 
 START_TIME=$(date +%s)
 
-pip-compile requirements.in --output-file=requirements.txt --upgrade
+uv pip compile requirements.in --output-file=requirements.txt --upgrade
 
 END_TIME=$(date +%s)
 
