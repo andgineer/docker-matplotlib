@@ -2,7 +2,7 @@
 
 # Lightweight Docker Container with Python Packages Matplotlib and NumPy
 
-Alpine Linux-based [Docker container](https://cloud.docker.com/repository/docker/andgineer/matplotlib) 
+Alpine Linux-based [Docker container](https://hub.docker.com/r/andgineer/matplotlib) 
 with pre-installed Python packages Matplotlib and NumPy.
 
 Additionally, it includes the 'Comic Sans' font to support XKCD-style plots in Matplotlib.
